@@ -1,8 +1,8 @@
 
 
-var  steps=[{key:0,name:10},
-            {key:1,name:1},
-            {key:2,name:2}];
+var  steps=[{key:0,name:'poki',score:10},
+            {key:1,name:'adden',score:1},
+            {key:2,name:'fire dragon',score:2}];
 
 var TodoList=React.createClass({
     
@@ -17,11 +17,12 @@ var TodoList=React.createClass({
             mysteps:newlists,
         });
     },
-    addlist:function(item){
+    addlist:function(name,score){
    
         var item={
             key:this.state.count,
-            name:item
+            name:name,
+            score:score,
         };
         this.state.mysteps.push(item); 
 
@@ -43,7 +44,7 @@ var TodoList=React.createClass({
                 <ul>
                 {
                     this.state.mysteps.map(function(item,idx,arry){
-                        return <TodoItem todo={item.name}/>;
+                        return <TodoItem todo={item.name} score={item.score}/>;
                     })
                 }</ul>
             </div>

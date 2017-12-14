@@ -12,16 +12,24 @@ var TodoItem=React.createClass({
 
     render:function(){
         return( 
-            <div className="todo-item done">
-               <table>
+            <div className="todo-item">
+               <table><tbody>
                    <tr>
-                     <td><input type='checkbox'/></td>
+                     
                      <td>
                          <h3>
                             {this.props.todo}
                          </h3>
                      </td>
-                  </tr>
+                     <td>
+                         <div width={100}/>
+                     </td>
+                     <td>
+                         <h3>
+                             {this.props.score}
+                         </h3>
+                     </td>
+                  </tr></tbody>
                </table>              
             </div>       
         );
